@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+body {
+  position: relative;
+}
+
+.bigBackground {
+  background-color: #a8dadc;
+  height: 100vh;
+  width: 50vw;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  border-radius: 100% 0 0 80%;
+}
+
+header nav {
+  width: 100%;
+}
+header nav ul {
+  padding: 2rem;
+  width: 70%;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+header nav ul li {
+  font-size: 1.75rem;
+}
+header nav ul li a {
+  color: #1d3557;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+main section.left {
+  flex: 3 1 500px;
+}
+main section.left h1 {
+  font-size: 4rem;
+  color: #a8dadc;
+  padding: 1rem 1.5rem;
+}
+main section.left p {
+  font-size: 1.5rem;
+  color: #1d3557;
+  padding: 1rem 1.5rem;
+}
+main section.right {
+  flex: 1 1 600px;
+  position: relative;
+}
+main section.right img {
+  width: 30vw;
+  height: 30vw;
+  position: absolute;
+  top: 20vh;
+  right: 2vw;
+  transform: translate(-50%);
+}
+main section.table {
+  flex: 3 1 500px;
+  padding: 2rem;
+}
+main section.table table {
+  border-collapse: collapse;
+}
+main section.table table tr {
+  border-bottom: 3px solid #f1faee;
+  transition: all 0.2s ease;
+}
+main section.table table tr:hover {
+  background-color: #f1faee;
+}
+main section.table table tr td {
+  color: #1d3557;
+  padding: 1rem;
+}
+main section.table table tr td.firstTd {
+  color: #457b9d;
+}
+main section.table table tr.firstTrTop {
+  border-top: 3px solid #f1faee;
+}
+main section.picture {
+  flex: 1 1 600px;
+  position: relative;
+}
+main section.picture img {
+  width: 30vw;
+}
+main section.picture div.backRect {
+  width: 30vw;
+  height: 40vw;
+  background-color: #a8dadc;
+  position: absolute;
+  top: 60px;
+  left: 80px;
+  z-index: -1;
+}
+main section.form {
+  flex: 1 1 600px;
+}
+main section.form form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+main section.form form div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0rem;
+}
+main section.form form div label {
+  min-width: 100px;
+  font-size: 1.5rem;
+  color: #1d3557;
+}
+main section.form form div input,
+main section.form form div textarea {
+  width: 80%;
+  background-color: #f1faee;
+  color: #457b9d;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  border: none;
+}
+main section.form form div input:focus,
+main section.form form div textarea:focus {
+  outline: 2px solid #457b9d;
+}
+main section.form form div textarea {
+  resize: none;
+}
+main section.form form div label[for=need] {
+  align-self: flex-start;
+}
+main section.form form button {
+  align-self: flex-end;
+  background-color: #f1faee;
+  color: #1d3557;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  margin: 0.5rem 0rem;
+  font-size: 2rem;
+}
+main div.line {
+  background-color: #457b9d;
+  width: 3px;
+}
+main section.contactMe {
+  flex: 1 1 500px;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  color: #1d3557;
+}
+main section.contactMe div.content h2 {
+  margin: 1rem 0rem;
+}
+main section.contactMe div.content h2:hover {
+  color: #e63946;
+}
+
+footer {
+  padding: 2rem;
+}
+footer a {
+  padding: 0.5rem;
+}
+
+.active {
+  color: #a8dadc;
+}
+
+@media screen and (max-width: 1100px) {
+  .bigBackground {
+    opacity: 0.7;
+  }
+  header nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  header nav ul li {
+    padding: 0.5rem 0rem;
+    border-bottom: 2px solid #a8dadc;
+  }
+  main section.right {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0em 3rem 0em;
+  }
+  main section.right img {
+    position: static;
+    transform: none;
+    width: 50vw;
+    height: 50vw;
+  }
+  main section.picture {
+    display: flex;
+    justify-content: center;
+  }
+  main section.picture img {
+    width: 50vw;
+    margin: 1rem 0rem;
+  }
+  main section.picture div.backRect {
+    display: none;
+  }
+  main section.form form div input,
+main section.form form div textarea {
+    width: 100%;
+  }
+  div.line {
+    display: none;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+$themeColorLight: #a8dadc;
+$themeColorMiddle: #457b9d;
+$themeColorDark: #1d3557;
+$themeColorBackground: #f1faee;
+$themeColorHighlight: #e63946;
+
+body {
+  position: relative;
+}
+// .bigBackground {
+//   border: 2px solid #e63946;
+//   position: absolute;
+//   top: -10vh;
+//   right: 0;
+//   z-index: -1;
+//   width: 55vw;
+//   height: 100vh;
+// }
+
+.bigBackground {
+  background-color: $themeColorLight;
+  height: 100vh;
+  width: 50vw;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  border-radius: 100% 0 0 80%;
+}
+
+header {
+  nav {
+    width: 100%;
+    ul {
+      padding: 2rem;
+      width: 70%;
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+      li {
+        font-size: 1.75rem;
+        a {
+          color: $themeColorDark;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  // width: 100%;
+  //幹嘛一定要設定，本來就自動佔滿100%寬了吧
+
+  section.left {
+    flex: 3 1 500px;
+
+    h1 {
+      font-size: 4rem;
+      color: $themeColorLight;
+      padding: 1rem 1.5rem;
+    }
+    p {
+      font-size: 1.5rem;
+      color: $themeColorDark;
+      padding: 1rem 1.5rem;
+    }
+  }
+
+  section.right {
+    flex: 1 1 600px;
+    position: relative;
+    img {
+      width: 30vw;
+      height: 30vw;
+      position: absolute;
+      top: 20vh;
+      right: 2vw;
+      transform: translate(-50%);
+    }
+  }
+
+  section.table {
+    flex: 3 1 500px;
+    padding: 2rem;
+    table {
+      border-collapse: collapse;
+      tr {
+        border-bottom: 3px solid $themeColorBackground;
+        transition: all 0.2s ease;
+        &:hover {
+          background-color: $themeColorBackground;
+        }
+        td {
+          color: $themeColorDark;
+          padding: 1rem;
+        }
+        td.firstTd {
+          color: $themeColorMiddle;
+        }
+      }
+
+      tr.firstTrTop {
+        border-top: 3px solid $themeColorBackground;
+      }
+    }
+  }
+
+  section.picture {
+    flex: 1 1 600px;
+    position: relative;
+    img {
+      width: 30vw;
+    }
+    div.backRect {
+      width: 30vw;
+      height: 40vw;
+      background-color: $themeColorLight;
+      position: absolute;
+      top: 60px;
+      left: 80px;
+      z-index: -1;
+    }
+  }
+
+  section.form {
+    flex: 1 1 600px;
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0rem;
+        label {
+          min-width: 100px;
+          font-size: 1.5rem;
+          color: #1d3557;
+        }
+        input,
+        textarea {
+          width: 80%;
+          background-color: #f1faee;
+          color: #457b9d;
+          font-size: 1.25rem;
+          padding: 0.5rem;
+          border: none;
+          &:focus {
+            outline: 2px solid #457b9d;
+          }
+        }
+        textarea {
+          resize: none;
+        }
+        label[for='need'] {
+          align-self: flex-start;
+        }
+      }
+
+      button {
+        align-self: flex-end; // 獨自移動位置
+        background-color: #f1faee;
+        color: #1d3557;
+        border: none;
+        cursor: pointer;
+        padding: 1rem 2rem;
+        margin: 0.5rem 0rem;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  div.line {
+    background-color: #457b9d;
+    width: 3px;
+  }
+
+  section.contactMe {
+    flex: 1 1 500px;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    color: #1d3557;
+    div.content {
+      h2 {
+        margin: 1rem 0rem;
+        &:hover {
+          color: #e63946;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 2rem;
+  a {
+    padding: 0.5rem;
+  }
+}
+
+.active {
+  color: $themeColorLight;
+}
+
+@media screen and (max-width: 1100px) {
+  .bigBackground {
+    opacity: 0.7;
+  }
+
+  header {
+    nav {
+      ul {
+        flex-direction: column;
+        width: 100%;
+        li {
+          padding: 0.5rem 0rem;
+          border-bottom: 2px solid $themeColorLight;
+        }
+      }
+    }
+  }
+
+  main {
+    section.right {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0em 3rem 0em;
+      img {
+        position: static;
+        transform: none;
+        width: 50vw;
+        height: 50vw;
+      }
+    }
+
+    section.picture {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 50vw;
+        margin: 1rem 0rem;
+      }
+      div.backRect {
+        display: none;
+      }
+    }
+
+    section.form {
+      form {
+        div {
+          input,
+          textarea {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  div.line {
+    display: none;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+  }
+}
